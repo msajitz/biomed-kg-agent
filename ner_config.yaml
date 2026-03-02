@@ -1,0 +1,20 @@
+# Biomedical NER Configuration
+# Single configuration for NER model priorities and entity linking
+
+# NER model priorities - General biomedical research
+# Higher numbers = higher priority in deduplication
+model_priorities:
+  bionlp: 3    # Most comprehensive biomedical coverage
+  craft: 2     # Good ontology linking
+  bc5cdr: 1    # Chemical/disease focused
+
+# Entity linking configuration
+linker:
+  enabled: true
+  core_model: "en_core_sci_sm"  # Light 50MB model with 100-d GloVe vectors
+  confidence_threshold: 0.7
+
+# Notes:
+# - Uses scispaCy's built-in UMLS KB (~1GB, cached after first download)
+# - Entity linking "just works" with proper core_model and confidence_threshold
+# - Override this config by providing custom YAML file with --config flag

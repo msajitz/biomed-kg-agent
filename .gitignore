@@ -1,0 +1,28 @@
+# .gitignore
+__pycache__/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+.coverage
+.env
+*.csv
+*.pyc
+*.pyo
+*.pyd
+.poetry/
+.cache/
+dist/
+build/
+.ipynb_checkpoints/
+.idea/
+.vscode/
+.DS_Store
+docker/*.pyc
+docker/__pycache__/
+data/
+
+# Temporary scripts and benchmark results
+scripts/*_test.py
+scripts/*_benchmark_results*.json
+scripts/scispacy_*.json
