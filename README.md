@@ -14,7 +14,7 @@ Synthesizing findings across thousands of biomedical papers is a manual bottlene
 **Stack:** Python 3.12, scispaCy, UMLS, Neo4j, Claude (Anthropic), Streamlit, SQLite
 
 ![Biomedical KG Agent UI](docs/assets/ui-screenshot.png)
-*Agent UI: query results with cited evidence from a 20K-abstract knowledge graph*
+*Agent UI: Streamlit interface for querying the biomedical knowledge graph*
 
 ## Example Agent Output
 
