@@ -164,7 +164,7 @@ class BiomedKGAgent:
                 - Shows entities at the intersection of two entity neighborhoods
                 - Useful for finding commonalities between diseases, drug targets, etc.
                 - Examples:
-                  - "What genes are implicated in both breast cancer and ovarian cancer?"
+                  - "What genes are associated with both breast cancer and ovarian cancer?"
                     -> FindSharedNeighbors(entity_a='breast cancer', entity_b='ovarian cancer',
                                            neighbor_type='gene')
                   - "Which drugs are used for both HER2+ and triple-negative breast cancer?"

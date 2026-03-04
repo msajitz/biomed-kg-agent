@@ -18,43 +18,43 @@ Synthesizing findings across thousands of biomedical papers is a manual bottlene
 
 ## Example Agent Output
 
-*Query: "What genes are implicated in both breast cancer and ovarian cancer?"*
+*Query: "What genes are associated with both breast cancer and ovarian cancer?"*
 
 <details>
 <summary>Full agent response (click to expand)</summary>
 
 **BRIEF SUMMARY**
 
-Several genes are implicated in both breast cancer and ovarian cancer, with the strongest associations being HER2, BRCA1, BRCA2, and TP53 (p53). These genes show combined evidence across 1,500+ documents, with HER2 being the most frequently co-associated gene across both cancer types.
+Several genes are strongly associated with both breast cancer and ovarian cancer, with HER2 showing the highest evidence (1,074 documents). The BRCA genes (BRCA1 and BRCA2) are particularly notable for their role in hereditary susceptibility to both cancers, while p53 mutations are enriched in both disease types. PARP, a DNA repair protein, is also implicated in both cancers, particularly in the context of BRCA-mutant tumors.
 
 **SELECTION RATIONALE**
 
-Selecting genes with >50 documents of evidence linking them to both breast and ovarian cancer. These represent the most well-established shared genetic factors between the two malignancies. Excluded lower-evidence results (<50 docs) to focus on genes with robust clinical and research documentation.
+Selecting genes with >50 documents of combined evidence across both cancer types. HER2 and HER2 protein are closely related entities (both represent the same gene product); I'm presenting HER2 as the primary result since it has higher evidence. BRCA (163 docs) represents the broader gene family; BRCA1 (94 docs) and BRCA2 (57 docs) are specific genes within this family. All results exceed the 50-document threshold and represent distinct genes with clear relevance to both cancers.
 
 **DETAILED RESULTS**
 
-- **HER2** — 1,074 documents; HER2 amplification or overexpression occurs in approximately 20-30% of breast cancers and is measured in HER2-overexpressing breast and ovarian cancer cells and tumor xenografts. HER2 serves as an important drug target in both cancer types [30725819, 34957911, 35335736, 35435784, 39600235, 40147045]
+- **HER2** — 1,074 documents; HER2 is amplified or overexpressed in approximately 20-30% of breast cancers and is studied in HER2-overexpressing breast and ovarian cancer cells and tumor xenografts. PARP inhibitor monotherapy is evaluated in HER2-negative breast cancer subtypes and ovarian cancer [30725819, 34957911, 35335736, 35435784, 39600235, 40147045]
 
-- **BRCA1** — 94 documents; BRCA1 germline mutations are associated with increased breast and ovarian cancer risk. BRCA1 and BRCA2 mutations play important roles in the development of both breast and ovarian cancer, and BRCA1-mutant breast cancers carry higher propensity for CNS metastasis [34044732, 35340889, 35343191, 35772246, 36928661, 37334492]
+- **BRCA** — 163 documents; BRCA mutations are associated with both breast and ovarian cancer development. PARP inhibitors have changed the treatment landscape for advanced ovarian tumors with BRCA mutations and are effective in BRCA 1/2-mutated epithelial ovarian cancer by blocking DNA repair pathways [34907091, 35340889, 35367197, 35641483, 35897700, 37148685]
 
-- **BRCA2** — 57 documents; BRCA1 and BRCA2 associated breast cancers carry a remarkably higher propensity of CNS metastasis. Germline variants in BRCA1 and BRCA2 play key roles in the development of both breast and ovarian cancer, with studies showing varying risks based on mutation type [34044732, 35343191, 35764927, 35772246, 39107554, 39461277]
+- **BRCA1** — 94 documents; BRCA1 mutations are associated with increased breast and ovarian cancer risk. Germline variants in BRCA1 play important roles in the development of breast and ovarian cancer in particular, and BRCA1-associated breast cancers carry a higher propensity of CNS metastasis [34044732, 35340889, 35343191, 35772246, 36928661, 37334492]
 
-- **p53** — 92 documents; TP53 mutations are enriched in both triple-negative breast cancer and high-grade serous ovarian cancer. Tumors with germline BRCA1/2 mutations show consistent enrichment of TP53 mutations across both cancer types [35393784, 35658233, 35870568, 39001541, 40019487, 40435111]
+- **p53** — 92 documents; TP53 mutations are enriched in both triple-negative breast cancer and high-grade serous ovarian cancer. Crizotinib combination therapies are emphasized in cancers with high prevalence of p53 mutations, such as TNBC and HGSOC [35393784, 35658233, 35870568, 39001541, 40019487, 40435111]
 
-- **BRCA** — 163 documents; BRCA mutations are associated with both breast and ovarian cancer development. PARP inhibitors have drastically changed the treatment landscape for advanced ovarian tumors with BRCA mutations and are also used in BRCA-mutated breast cancer [34907091, 35340889, 35367197, 35641483, 35897700, 37148685]
+- **PARP** — 156 documents; PARP1 is amplified in approximately 22.8% of breast cancers. PARP inhibitors (olaparib, rucaparib, niraparib) are approved for epithelial ovarian cancer and are used for breast cancer treatment, particularly in BRCA-mutant tumors [35367197, 35442700, 35466854, 35641483, 35670707, 35834102]
 
-- **PARP** — 156 documents; PARP1 shows copy number amplification in approximately 22.8% of breast cancers. PARP inhibitors (olaparib, rucaparib, niraparib) are approved for epithelial ovarian cancer and are also used for breast cancer treatment [35367197, 35442700, 35466854, 35641483, 35670707, 35834102]
+- **BRCA2** — 57 documents; BRCA2 mutations are associated with increased breast and ovarian cancer risk. Germline variants in BRCA2 play important roles in the development of breast and ovarian cancer, with different mutations associated with varying cancer risks [34044732, 35343191, 35764927, 35772246, 39107554, 39461277]
 
 </details>
 
 ## Use Cases
 
-- **Literature review**: Query relationships across thousands of abstracts
-  *"What genes are implicated in both breast cancer and ovarian cancer?"*
-- **Pattern exploration**: Explore co-occurrence patterns across genes, diseases, and chemicals
-  *"What drugs are associated with triple-negative breast cancer?"*
-- **Relationship evidence**: Inspect the literature behind a specific relationship
-  *"Explain the relationship between BRCA1 and PARP inhibitors"*
+- **Literature exploration** — Query evidence-backed associations across thousands of abstracts
+  *Example: "What genes are associated with both breast cancer and ovarian cancer?"*
+- **Evidence inspection** — Summarize the literature supporting a specific graph connection
+  *Example: "How is BRCA1 linked to breast cancer?"*
+- **Pattern discovery** — Explore co-occurrence patterns across genes, diseases, and chemicals
+  *Example: "What chemicals are related to BRCA1?"*
 
 > **Approach:** This is a research exploration tool for biomedical literature analysis. The knowledge graph captures sentence-level co-occurrence relationships.
 

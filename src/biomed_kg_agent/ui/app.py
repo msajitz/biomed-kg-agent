@@ -83,7 +83,7 @@ def initialize_agent() -> Optional[BiomedKGAgent]:
 
     try:
         umls_enabled = st.session_state.get("enable_umls", False)
-        hint = " (UMLS linker ~30s)" if umls_enabled else ""
+        hint = " (UMLS linker ~60s)" if umls_enabled else ""
         with st.spinner(f"🔗 Initializing agent{hint}..."):
             agent = BiomedKGAgent(
                 neo4j_driver=driver,
@@ -353,8 +353,8 @@ def main() -> None:
     col1, col2, col3 = st.columns(3)
 
     example_queries = [
-        "What genes are implicated in both breast cancer and ovarian cancer?",
-        "Explain the relationship between BRCA1 and breast cancer",
+        "What genes are associated with both breast cancer and ovarian cancer?",
+        "How is BRCA1 linked to breast cancer?",
         "What chemicals are related to BRCA1?",
     ]
 
